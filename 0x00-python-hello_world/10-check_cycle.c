@@ -8,7 +8,7 @@
 
 int check_cycle(listint_t *list)
 {
-	int i, j, size = 10, nw_size;
+	int i, j, size = 8, nw_size;
 	listint_t **node_add;
 
 	node_add = malloc(sizeof(listint_t *) * size);
