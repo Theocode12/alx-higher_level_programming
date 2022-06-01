@@ -10,7 +10,7 @@
 int check_cycle(listint_t *list)
 {
 	int i, j;
-	listint_t *node_adr[8];
+	listint_t *node_adr[100];
 
 	for (i = 0; list; i++)
 	{
