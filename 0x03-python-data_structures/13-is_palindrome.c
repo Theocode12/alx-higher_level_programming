@@ -10,7 +10,8 @@
 
 int is_palindrome(listint_t **head)
 {
-	int i = 0, j, hlf_i, *data, *rev_data;
+	int i = 0, j, hlf_i, *rev_data;
+	int data[1024];
 	listint_t *nw_head;
 
 	if (*head == NULL)
@@ -21,7 +22,7 @@ int is_palindrome(listint_t **head)
 		i++;
 		nw_head = nw_head->next;
 	}
-	data = malloc(sizeof(int) * (i));
+	/*data = malloc(sizeof(int) * (i));*/
 	nw_head = *head;
 	for (j = 0; nw_head; j++)
 	{
@@ -34,10 +35,10 @@ int is_palindrome(listint_t **head)
 	{
 		if (data[j] != rev_data[i])
 		{
-			free(data);
+			/*free(data);*/
 			return (0);
 		}
 	}
-	free(data);
+	/*free(data);*/
 	return (1);
 }
