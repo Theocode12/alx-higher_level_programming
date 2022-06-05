@@ -28,7 +28,7 @@ int is_palindrome(listint_t **head)
 		data[j] = nw_head->n;
 		nw_head = nw_head->next;
 	}
-	hlf_i = (i / 2) + 1;
+	hlf_i = (i / 2);
 	rev_data = data + (--i);
 	for (j = 0, i = 0; j <= hlf_i; j++, i--)
 	{
