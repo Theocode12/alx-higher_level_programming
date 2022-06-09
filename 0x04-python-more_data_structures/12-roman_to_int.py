@@ -9,7 +9,7 @@ def roman_to_int(roman_string: "str") -> "int":
             if roman_string[i] in rm_sym:
                 roman_int += rm_sym.get(roman_string[i])
             else:
-                return
+                return 0
             if i > 0 and flag:
                 if (rm_str[i] == 'V' or rm_str[i] == 'X') \
                         and rm_str[i - 1] == 'I':
