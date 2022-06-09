@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string: "str") -> "int":
     rm_sym = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    rm_str = roman_string
+    rm_str = roman_string.strip()
     roman_int = 0
     flag = True
     if roman_string:
-        for i in range(len(roman_string)):
-            if roman_string[i] in rm_sym:
-                roman_int += rm_sym.get(roman_string[i])
+        for i in range(len(rm_str)):
+            if rm_str[i] in rm_sym:
+                roman_int += rm_sym.get(rm_str[i])
             else:
                 return 0
             if i > 0 and flag:
