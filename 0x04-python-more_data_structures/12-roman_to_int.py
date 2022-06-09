@@ -3,7 +3,7 @@ def roman_to_int(roman_string: "str") -> "int":
     rm_sym = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     roman_int = 0
     flag = True
-    if roman_string:
+    if roman_string and isinstance(roman_string, str):
         rm_str = roman_string.strip()
         for i in range(len(rm_str)):
             if rm_str[i] in rm_sym:
