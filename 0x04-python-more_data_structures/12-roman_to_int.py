@@ -28,4 +28,4 @@ def roman_to_int(roman_string: "str") -> "int":
                     continue
             flag = True
         return roman_int
-    return
+    return 0
