@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-from asyncio import exceptions
-
-
 def safe_print_division(a, b):
     flag = 1
     try:
