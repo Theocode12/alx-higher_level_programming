@@ -25,7 +25,7 @@ class Square(object):
     def position(self, value):
         """Setter for position of square"""
 
-        if (len(value) == 2 and value[0] >= 0 and value[1] >= 0
+        if not(len(value) == 2 and value[0] >= 0 and value[1] >= 0
             and isinstance(value, tuple)
             and isinstance(value[1], int)
                 and isinstance(value[2], int)):
