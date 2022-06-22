@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import math
 """A module that implements the getting the attributes
 of a circular object"""
+import math
 
 
 class MagicClass:
