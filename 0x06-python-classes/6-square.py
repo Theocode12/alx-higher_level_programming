@@ -24,7 +24,6 @@ class Square(object):
     @position.setter
     def position(self, value):
         """Setter for position of square"""
-        print("position: {}".format(value))
         if not(len(value) == 2
                 and type(value) is tuple
                 and type(value[0]) is int
