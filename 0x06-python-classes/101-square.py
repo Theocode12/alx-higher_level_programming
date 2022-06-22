@@ -70,8 +70,7 @@ class Square(object):
         """Returns a string representation of the square object"""
 
         if self.size == 0:
-            print("")
-            return
+            return ""
         if self.position[1] > 0:
             y_ax = "\n" * (self.position[1] - 1)
         else:
