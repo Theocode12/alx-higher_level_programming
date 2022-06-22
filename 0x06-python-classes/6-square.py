@@ -26,12 +26,12 @@ class Square(object):
         """Setter for position of square"""
         print("position: {}".format(value))
         if not(len(value) == 2
-            and type(value) is tuple
-            and type(value[0]) is int
-            and type(value[1]) is int
+                and type(value) is tuple
+                and type(value[0]) is int
+                and type(value[1]) is int
                 and value[0] >= 0 and value[1] >= 0):
             raise TypeError("position must be a tuple of 2 positive integers")
-        
+
         self._position = value
 
     @property
