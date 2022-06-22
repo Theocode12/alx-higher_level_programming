@@ -30,8 +30,7 @@ class Square(object):
             and isinstance(value[1], int)
                 and isinstance(value[2], int)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self._Square__position = value
+        self._Square__position = value
 
     @property
     def size(self):
