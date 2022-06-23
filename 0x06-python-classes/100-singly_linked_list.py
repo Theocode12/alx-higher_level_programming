@@ -78,7 +78,7 @@ class SinglyLinkedList:
         """An Informal string representation of the singly list object"""
 
         if self.__head is None:
-            return "\n"
+            return " "
         res = ""
         temp = self.__head
         while temp.next_node is not None:
@@ -86,3 +86,7 @@ class SinglyLinkedList:
             temp = temp.next_node
         res += str(temp.data)
         return res
+
+
+sll = SinglyLinkedList()
+print(sll)
