@@ -84,7 +84,3 @@ class SinglyLinkedList:
             future = future.next_node
 
         return "\n".join(output)
-
-
-sll = SinglyLinkedList()
-print(sll)
