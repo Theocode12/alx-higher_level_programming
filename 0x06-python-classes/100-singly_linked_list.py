@@ -73,16 +73,18 @@ class SinglyLinkedList:
                     return
                 temp_head = temp_head.next_node
             temp_head.next_node = new_node
+            
+    def __str__(self) -> str:
+        """ returns string to be printed for SinglyLinkedList """
+        output = list()
+        future = self.__head
 
-    def __str__(self):
-        """An Informal string representation of the singly list object"""
+        while future is not None:
+            output.append(str(future.data))
+            future = future.next_node
 
-        if self.__head is None:
-            return " "
-        res = ""
-        temp = self.__head
-        while temp.next_node is not None:
-            res += str(temp.data) + '\n'
-            temp = temp.next_node
-        res += str(temp.data)
-        return res
+        return "\n".join(output)
+
+
+sll = SinglyLinkedList()
+print(sll)
