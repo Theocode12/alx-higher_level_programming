@@ -25,11 +25,12 @@ class Node:
         self.__data = value
 
     @property
-    def next_node_node(self):
+    def next_node(self):
         """Return the  next_node_node of the linked list"""
 
         return self.__next_node
 
+    @next_node.setter
     def next_node(self, value):
         """Sets the next_node node of the linked list"""
 
@@ -75,6 +76,7 @@ class SinglyLinkedList:
 
     def __str__(self):
         """An Informal string representation of the singly list object"""
+
         res = ""
         temp = self.head
         while temp.next_node is not None:
