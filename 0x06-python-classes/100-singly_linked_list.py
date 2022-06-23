@@ -73,28 +73,6 @@ class SinglyLinkedList:
                 temp_head = temp_head.next_node
             temp_head.next_node = new_node
 
-    def append(self, value):
-        """Appends the node to the linked list"""
-
-        if self.head is None:
-            self.head = Node(value)
-        else:
-            last_node = self.head
-            while last_node.next_node is not None:
-                last_node = last_node.next_node
-            last_node.next_node = Node(value)
-
-    def printnode(self):
-        """Prints the node in the linked list"""
-
-        if self.head is None:
-            print("No node found")
-        else:
-            temp_node = self.head
-            while temp_node is not None:
-                print("Node: ", temp_node._data)
-                temp_node = temp_node.next_node
-
     def __str__(self):
         """An Informal string representation of the singly list object"""
         res = ""
