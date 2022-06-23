@@ -14,7 +14,7 @@ class Node:
     def data(self):
         """Return the data of the node"""
 
-        return self._data
+        return self.__data
 
     @data.setter
     def data(self, value):
@@ -22,20 +22,20 @@ class Node:
 
         if type(value) is not int:
             raise TypeError("data must be an integer")
-        self._data = value
+        self.__data = value
 
     @property
     def next_node_node(self):
         """Return the  next_node_node of the linked list"""
 
-        return self._next_node
+        return self.__next_node
 
     def next_node(self, node):
         """Sets the next_node node of the linked list"""
 
         if type(node) is not Node and node is not None:
-            raise TypeError(" next_node node must be a Node object")
-        self._next_node = node
+            raise TypeError("next_node node must be a Node object")
+        self.__next_node = node
 
 
 class SinglyLinkedList:
