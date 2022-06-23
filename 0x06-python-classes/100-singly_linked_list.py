@@ -77,6 +77,8 @@ class SinglyLinkedList:
     def __str__(self):
         """An Informal string representation of the singly list object"""
 
+        if self.__head is None:
+            return "\n"
         res = ""
         temp = self.__head
         while temp.next_node is not None:
