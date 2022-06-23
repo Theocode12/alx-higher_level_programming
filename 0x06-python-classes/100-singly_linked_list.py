@@ -63,7 +63,7 @@ class SinglyLinkedList:
                     new_node.next_node = temp_head.next_node
                     temp_head.next_node = new_node
                     return
-                temp_head = temp_head.next_node
+            temp_head = temp_head.next_node
             temp_head.next_node = new_node
 
     def append(self, value):
