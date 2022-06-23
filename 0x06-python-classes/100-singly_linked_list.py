@@ -30,12 +30,19 @@ class Node:
 
         return self.__next_node
 
-    def next_node(self, node):
+    def next_node(self, value):
         """Sets the next_node node of the linked list"""
 
-        if type(node) is not Node and node is not None:
+        if type(value) is not Node and value is not None:
             raise TypeError("next_node must be a Node object")
-        self.__next_node = node
+        self.__next_node = value
+
+    def __str__(self):
+        """String representation of Node instance
+        Returns:
+            Formatted string representing the node
+        """
+        return str(self.__data)
 
 
 class SinglyLinkedList:
