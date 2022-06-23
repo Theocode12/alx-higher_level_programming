@@ -73,7 +73,7 @@ class SinglyLinkedList:
                     return
                 temp_head = temp_head.next_node
             temp_head.next_node = new_node
-            
+
     def __str__(self) -> str:
         """ returns string to be printed for SinglyLinkedList """
         output = list()
@@ -82,5 +82,4 @@ class SinglyLinkedList:
         while future is not None:
             output.append(str(future.data))
             future = future.next_node
-
         return "\n".join(output)
