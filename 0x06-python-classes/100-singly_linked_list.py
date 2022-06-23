@@ -34,7 +34,7 @@ class Node:
         """Sets the next_node node of the linked list"""
 
         if type(node) is not Node and node is not None:
-            raise TypeError("next_node node must be a Node object")
+            raise TypeError("next_node must be a Node object")
         self.__next_node = node
 
 
