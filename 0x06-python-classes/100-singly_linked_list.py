@@ -86,7 +86,3 @@ class SinglyLinkedList:
             temp = temp.next_node
         res += str(temp.data)
         return res
-
-
-sll = SinglyLinkedList()
-print(sll)
