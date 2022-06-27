@@ -4,4 +4,6 @@ square"""
 
 
 class Rectangle(object):
+    """A class representing a rectangle"""
+
     pass
