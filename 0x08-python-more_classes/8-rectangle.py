@@ -3,9 +3,6 @@
 square"""
 
 
-from typing import Type
-
-
 class Rectangle(object):
     """Represent a class rectangle"""
 
