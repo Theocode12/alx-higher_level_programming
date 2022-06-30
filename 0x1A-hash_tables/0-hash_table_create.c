@@ -14,5 +14,5 @@ hash_table_t *hash_table_create(unsigned long int size)
 	ht = malloc(sizeof(hash_table_t));
 	ht->size = size;
 	ht->array = calloc(size, sizeof(unsigned long int *));
-	return ht;
+	return (ht);
 }
