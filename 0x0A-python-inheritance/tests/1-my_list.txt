@@ -1,0 +1,54 @@
+=====================================
+Test Cases for 1-my_list module 
+=====================================
+
+Importing the 1-my_list module
+=====================================
+::
+        >>> MyList = __import__('1-my_list').MyList
+
+checking if docs are present
+        >>> Mdocs = __import__('1-my_list').__doc__
+        >>> len(Mdocs) > 5
+        True
+
+checking normal implementation when list is passed
+        >>> my_list = MyList()
+        >>> my_list.append(2)
+        >>> my_list.append(0)
+        >>> my_list.append(5)
+        >>> my_list.print_sorted()
+        [0, 2, 5]
+
+checking subclasses
+
+        >>> my_list = MyList()
+        >>> issubclass(my_list.__class__, list)
+        True
+
+checking when numbers are placed in reverse order
+
+        >>> my_list = MyList()
+        >>> my_list.extend([5, 4, 3, 2, 1])
+        >>> my_list.print_sorted()
+        [1, 2, 3, 4, 5]
+
+checking when numbers are negative integers
+
+        >>> my_list = MyList()
+        >>> my_list.extend([-2, -1, -5, -3])
+        >>> my_list.print_sorted()
+        [-5, -3, -2, -1]
+
+checking when list is empty
+
+        >>> m_list = MyList()
+        >>> m_list.print_sorted()
+        []
+
+checking when list is a mixture of both positive and negative integers
+
+        >>> m_list = MyList()
+        >>> m_list.extend([2, -3, 5, -5])
+        >>> m_list.print_sorted()
+        [-5, -3, 2, 5]
