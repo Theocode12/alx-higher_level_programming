@@ -9,7 +9,7 @@ class MyInt(int):
         """compare MyInt object when == is used"""
 
         int.__eq__(self, other)
-        if int(self) is other:
+        if int(self) is int(other):
             return False
         return True
 
@@ -17,6 +17,6 @@ class MyInt(int):
         """Is called when the != is used"""
 
         int.__ne__(self, other)
-        if int(self) is other:
+        if int(self) is int(other):
             return True
         return False
