@@ -7,4 +7,4 @@ def read_file(filename=""):
 
     if type(filename) is str:
         with open(filename, mode="r", encoding="utf-8") as f_name:
-            print(f_name.read())
+            print(f_name.read(), end="")
