@@ -6,5 +6,9 @@ to sort list items"""
 class MyList(list):
     """This class add more functionality to the list object"""
 
+    def __int__(self):
+        super().__init__()
+        
     def print_sorted(self):
+        """prints sorted list"""
         print(sorted(self))
