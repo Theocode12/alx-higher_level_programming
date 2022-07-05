@@ -7,5 +7,5 @@ class MyList(list):
     """This class add more functionality to the list object"""
       
     def print_sorted(self):
-        """prints sorted list"""
+        """prints sorted list."""
         print(sorted(self))
