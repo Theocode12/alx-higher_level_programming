@@ -1,0 +1,62 @@
+=====================================
+Test Cases for 7-base_geometry module 
+=====================================
+
+Importing the 7-base_geometry module
+=====================================
+::
+        >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+checking if docs are present
+        >>> Mdocs = __import__('7-base_geometry').__doc__
+        >>> len(Mdocs) > 5
+        True
+
+Checking for module docstring:
+        >>> m = __import__("7-base_geometry").__doc__
+        >>> len(m) > 1
+        True
+
+Checking for class docstring:
+        >>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+        >>> len(c) > 1
+        True
+
+Checking for method docstring:
+	    >>> mod = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+	    >>> len(mod) > 1
+	    True
+
+checking when area() is called:
+        >>> bg = BaseGeometry()
+        >>> bg.area()
+        Traceback (most recent call last):
+        ...
+        Exception: area() is not implemented
+
+checking when area() is called with multiple arguments:
+        >>> bg.area(20)
+        Traceback (most recent call last):
+        ...
+        TypeError: area() takes 1 positional argument but 2 were given
+
+checking when integer validation is called appropriately:
+        >>> bg.integer_validator("square", 10)
+
+checking when integer validation is called with a negative value
+        >>> bg.integer_validator("pop", -12)
+        Traceback (most recent call last):
+        ...
+        ValueError: pop must be greater than 0
+
+checking when integer validation is called with a wrong type
+        >>> bg.integer_validator("yum", "10")
+        Traceback (most recent call last):
+        ...
+        TypeError: yum must be an integer
+
+Checking when integer_validator is called with less than required arguments
+        >>> bg.integer_validator("paul")
+        Traceback (most recent call last):
+        ...
+        TypeError: integer_validator() missing 1 required positional argument: 'value'
