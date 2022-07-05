@@ -5,5 +5,6 @@
 def read_file(filename=""):
     """A function that reads a file and prints it"""
 
-    with open(filename, mode="r", encoding="utf-8") as f_name:
-        print(f_name.read())
+    if type(filename) is str:
+        with open(filename, mode="r", encoding="utf-8") as f_name:
+            print(f_name.read())
