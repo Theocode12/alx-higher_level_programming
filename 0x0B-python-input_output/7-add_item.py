@@ -18,13 +18,11 @@ else:
     args = []
 try:
     text = load_from_json_file("add_item.json")
-    if len(text) == 0:
-        text = []
 
-except:
-    save_to_json_file(args, "add_item.json")
+except Exception:
+    text = []
 
-else:
-    for arg in args:
-        text.append(arg)
-    save_to_json_file(text, "add_item.json")
+
+for arg in args:
+    text.append(arg)
+save_to_json_file(text, "add_item.json")
