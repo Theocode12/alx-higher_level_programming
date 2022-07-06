@@ -13,7 +13,7 @@ class Student(object):
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
-    
+
     def to_json(self):
         stu_dict = self.__dict__.copy()
         for key in stu_dict:
