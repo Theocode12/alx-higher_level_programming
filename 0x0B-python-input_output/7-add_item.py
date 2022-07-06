@@ -25,5 +25,6 @@ except Exception as e:
     save_to_json_file(args, "add_item.json")
 
 else:
-    text.extend(args)
+    for arg in args:
+        text.append(arg)
     save_to_json_file(text, "add_item.json")
