@@ -13,7 +13,6 @@ else:
     args = []
 try:
     text = load_from_json_file(filename)
-
 except Exception:
     text = []
 
