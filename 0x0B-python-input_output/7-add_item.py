@@ -21,7 +21,7 @@ try:
     if len(text) == 0:
         text = []
 
-except Exception as e:
+except:
     save_to_json_file(args, "add_item.json")
 
 else:
