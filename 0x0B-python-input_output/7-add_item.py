@@ -1,23 +1,22 @@
 #!/usr/bin/python3
-"""
-    7-add_item Module
-"""
+"""A script that adds all arguements in to a python list."""
+
 from sys import argv
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
+load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
-
-filename = 'add_item.json'
-my_list = []
+filename = "add_item.json"
+args = argv
+if len(args) > 1:
+    args = args[1:]
+else:
+    args = []
 try:
-    my_list = load_from_json_file(filename)
+    text = load_from_json_file(filename)
+
 except Exception:
-    save_to_json_file(my_list, filename)
+    text = []
 
-arg_len = len(argv)
-
-if arg_len > 1:
-    for i in range(1, arg_len):
-        my_list.append(argv[i])
-
-    save_to_json_file(my_list, filename)
+for arg in args:
+    text.append(arg)
+save_to_json_file(text, filename)
