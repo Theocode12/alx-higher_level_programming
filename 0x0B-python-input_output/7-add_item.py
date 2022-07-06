@@ -2,7 +2,6 @@
 """A script that adds all arguements in to a python list."""
 
 import sys
-import os
 """Importing the sys and os module"""
 
 save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
@@ -13,13 +12,18 @@ load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
 
 args = sys.argv
-if os.path.exists("add_item.json"):
-    text = load_from_json_file("add_item.json")
 if len(args) > 1:
     args = args[1:]
 else:
     args = []
-if len(text) == 0:
-    text = []
-text.extend(args)
-save_to_json_file(text, "add_item.json")
+try:
+    text = load_from_json_file("add_item.json")
+    if len(text) == 0:
+        text = []
+
+except Exception as e:
+    save_to_json_file(args, "add_item.json")
+
+else:
+    text.extend(args)
+    save_to_json_file(text, "add_item.json")
