@@ -14,10 +14,8 @@ def append_after(filename="", search_string="", new_string=""):
         text = []
         for line in lines:
             text.append(line)
-            print(text)
             if search_string in line:
                 text.append(new_string)
-            print(text)
 
     with open(filename, mode="w", encoding="utf-8") as file:
         text = "".join(text)
