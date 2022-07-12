@@ -33,8 +33,8 @@ class Base(object):
 
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
-        j_obj = json.dumps(list_dictionaries)
-        return j_obj
+        return json.dumps(list_dictionaries)
+        
 
     @classmethod
     def save_to_file(cls, list_objs):
