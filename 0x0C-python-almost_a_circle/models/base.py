@@ -63,8 +63,10 @@ class Base(object):
     @classmethod
     def create(cls, **dictionary):
         """creates an object with values from the dictionary"""
-
-        obj_cls = cls(3, 5)
+        if cls.__name__ == "Rectangle":
+            obj_cls = cls(3, 5)
+        else:
+            obj_cls = cls(4)
         obj_cls.update(**dictionary)
         return obj_cls
 
