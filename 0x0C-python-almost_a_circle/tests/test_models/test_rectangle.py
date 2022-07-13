@@ -2,7 +2,6 @@
 Test cases for Rectangle class
 """
 
-from pygame import Rect
 from models import rectangle
 import unittest
 import json
