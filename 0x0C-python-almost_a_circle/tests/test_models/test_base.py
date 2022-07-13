@@ -29,7 +29,6 @@ class TestBaseDocs(unittest.TestCase):
 
     def test_method_docs(self):
         list_of_methods = inspect.getmembers(base.Base, inspect.isfunction)
-        print(list_of_methods)
         for methods in list_of_methods:
             method = Base.__name__ + '.' + methods[0]
             self.assertTrue(len(eval(method).__doc__) > 4)
