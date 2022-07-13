@@ -71,6 +71,11 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r3.width, 6)
         self.assertEqual(self.r4.width, 9)
     
+    def test_width_and_height(self):
+        r_1 = Rectangle(1, 2)
+        self.assertIs(type(r_1), Rectangle)
+
+
     def test_width_setter(self):
         """Test width setter."""
 
@@ -100,6 +105,9 @@ class TestRectangle(unittest.TestCase):
             self.r2.width = -3
         with self.assertRaises(ValueError):
             Rectangle(-3, 4)
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 2)
+
     def test_height_setter(self):
         """Test height setter."""
 
@@ -122,6 +130,11 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             rectangle(4, "world")
 
+    def test_when_width_and_height_is_zero(self):
+        with self.assertRaises(ValueError):
+            Rectangle(0, 1)
+        with self.assertRaises(ValueError):
+            Rectangle(2, 0)
 
     def test_width_when_neg_num_passed(self):
         """test setter when negative number is passed"""
@@ -166,7 +179,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.r4.x = -10
         with self.assertRaises(ValueError):
-            Rectangle(3, 5, -10, -2)
+            Rectangle(3, 5, -10)
 
 
     def test_y_setter(self):

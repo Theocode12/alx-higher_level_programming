@@ -47,10 +47,21 @@ class TestSquare(unittest.TestCase):
     def test_object_id(self):
         """test object id"""
 
-        self.assertEqual(self.s1.id, 23)
-        self.assertEqual(self.s2.id, 24)
+        self.assertEqual(self.s1.id, 24)
+        self.assertEqual(self.s2.id, 25)
         self.assertEqual(self.s3.id, 1)
     
+    def test_width(self):
+        self.assertEqual(self.s1.width, 14)
+        self.assertEqual(self.s2.width, 3)
+        self.assertEqual(self.s3.width, 6)
+
+    def test_height(self):
+        """Test for functioning height"""
+        self.assertEqual(self.s1.height, 1)
+        self.assertEqual(self.s2.height, 3)
+        self.assertEqual(self.s3.height, 6)
+
     def test_size_getter(self):
         """Test size property"""
 
@@ -166,8 +177,8 @@ class TestSquare(unittest.TestCase):
             self.s1.area(6)
 
     def test_str_methods(self):
-        self.assertEqual(str(self.s1), '[Square] (23) 0/0 - 14')
-        self.assertEqual(str(self.s2), '[Square] (24) 1/1 - 3')
+        self.assertEqual(str(self.s1), '[Square] (24) 0/0 - 14')
+        self.assertEqual(str(self.s2), '[Square] (25) 1/1 - 3')
         self.assertEqual(str(self.s3), '[Square] (1) 1/1 - 6')
 
     def test_update_method_using_args(self):
