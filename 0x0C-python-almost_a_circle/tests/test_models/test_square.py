@@ -11,6 +11,29 @@ from io import StringIO
 
 Square = square.Square
 
+class TestSquareDocs(unittest.TestCase):
+    """
+    Testing if docs are present and if the files are PEP valid
+    """
+
+    def test_Square_pep8_conformance(self):
+        """Test if Square conforms to pep8 style"""
+
+        pep_check = pep8.StyleGuide()
+        result = pep_check.check_files(["models/square.py"])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
+
+    def test_module_docs(self):
+        """checks if module documentation is present"""
+
+        self.assertTrue(len(square.__doc__) > 4)
+
+    def test_cls_docs(self):
+        """checks if class docs are present"""
+
+        self.assertTrue(len(Square.__doc__) > 4)
+
 class TestSquare(unittest.TestCase):
     """check that Squares functionality"""
 
