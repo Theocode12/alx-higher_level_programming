@@ -9,8 +9,9 @@ import json
 import inspect
 import pep8
 import os
-import io
-from contextlib import redirect_stdout
+from unittest.mock import patch
+from io import StringIO
+
 Rectangle = rectangle.Rectangle
 
 class TestRectangleDocs(unittest.TestCase):
@@ -311,30 +312,16 @@ class TestRectangle(unittest.TestCase):
     def test_basic_display(self):
         
         r = Rectangle(2, 3, 0, 0, 1)
-        with io.StringIO() as buf, redirect_stdout(buf):
-            self.r1.display()
-            output = buf.getvalue()
-            self.assertEqual(output, ("#" * 10 + "\n") * 10)
-        with io.StringIO() as buf, redirect_stdout(buf):
+        expected_display = "##\n##\n##\n"
+        with patch('sys.stdout', new = StringIO()) as out:
             r.display()
-            output = buf.getvalue()
-            self.assertEqual(output, ("#" * 2 + "\n") * 3)
+            self.assertEqual(out.getvalue(), expected_display)
+
 
     def test_display_xy(self):
         """Testing the display method with x and y"""
-        with io.StringIO() as buf, redirect_stdout(buf):
-            self.r2.display()
-            output = buf.getvalue()
-            self.assertEqual(output, (" " * 4 + "#" * 2 + "\n") * 3)
-
-        with io.StringIO() as buf, redirect_stdout(buf):
-            self.r3.display()
-            output = buf.getvalue()
-            self.assertEqual(output, "\n" * 8 +
-                             (" " * 7 + "#" * 5 + "\n") * 6)
-
-        with io.StringIO() as buf, redirect_stdout(buf):
-            self.r4.display()
-            output = buf.getvalue()
-            self.assertEqual(output, "\n" * 14 +
-                             (" " * 13 + "#" * 11 + "\n") * 12)
+        r = Rectangle(2, 2, 2, 2, 1)
+        expected_display = "\n\n  ##\n  ##\n"
+        with patch('sys.stdout', new = StringIO()) as out:
+            r.display()
+            self.assertEqual(out.getvalue(), expected_display)
