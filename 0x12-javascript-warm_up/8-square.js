@@ -9,8 +9,8 @@ if (argv.length === 2) {
   console.log('Missing size');
 } else {
   num = parseInt(argv[2]);
-  if (Number.isInteger(num)) {
-    for (; i < num && num > 0; i++) {
+  if (Number.isInteger(num) && (num > 0)) {
+    for (; (i < num); i++) {
       for (j = 0; j < num; j++) {
         result += 'X';
       }
