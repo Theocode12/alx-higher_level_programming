@@ -10,10 +10,8 @@ for (; counter <= argv.length - 1; counter++) {
   if (parseInt(argv[counter]) > big) {
     secondBig = big;
     big = parseInt(argv[counter]);
-  }
-  else if (parseInt(argv[counter]) > secondBig && argv.length > 3)
-  {
-    secondBig = parseInt(argv[counter])
+  } else if (parseInt(argv[counter]) > secondBig && argv.length > 3) {
+    secondBig = parseInt(argv[counter]);
   }
 }
 console.log(secondBig);
