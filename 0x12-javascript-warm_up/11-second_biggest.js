@@ -7,9 +7,13 @@ let secondBig = 0;
 let counter = 2;
 
 for (; counter <= argv.length - 1; counter++) {
-  if (Math.round(parseInt(argv[counter])) > big) {
+  if (parseInt(argv[counter]) > big) {
     secondBig = big;
     big = parseInt(argv[counter]);
+  }
+  else if (parseInt(argv[counter]) > secondBig && argv.length > 3)
+  {
+    secondBig = parseInt(argv[counter])
   }
 }
 console.log(secondBig);
