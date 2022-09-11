@@ -16,7 +16,7 @@ def main():
     db = MySQLdb.connect(host="localhost", port=3306, user=username,
                          password=password, db=database)
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name ='{}' ORDER BY id".format(name)
+    query = "SELECT * FROM states WHERE name ='{}' ORDER BY states.id".format(name)
     cur.execute(query)
     result = cur.fetchall()
     for row in result:
