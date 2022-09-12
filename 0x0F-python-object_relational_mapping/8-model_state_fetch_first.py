@@ -18,7 +18,8 @@ def main():
                            .format(user, passwd, db), pool_pre_ping=True)
     session = Session(engine)
     result = session.query(State).order_by(State.id).first()
-    print("{}: {}".format(result.id, result.name))
+    if result:
+        print("{}: {}".format(result.id, result.name))
 
 
 if __name__ == "__main__":
