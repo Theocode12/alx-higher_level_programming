@@ -20,7 +20,7 @@ def main():
                            .format(user, passwd, db), pool_pre_ping=True)
 
     session = Session(engine)
-    states = session.query(State).join(City).order_by(State.id, City.id)
+    states = session.query(State).outerjoin(City).order_by(State.id, City.id)
     for state in states:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
