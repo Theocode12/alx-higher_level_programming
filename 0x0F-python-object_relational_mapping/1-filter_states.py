@@ -15,7 +15,8 @@ def main():
     db = MySQLdb.connect(host="localhost", port=3306, user=username,
                          password=password, db=database)
     cur = db.cursor()
-    cur.execute("""SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id""")
+    cur.execute("""SELECT * FROM states WHERE name LIKE BINARY 'N%'
+                ORDER BY id""")
     result = cur.fetchall()
     for row in result:
         print(row)
