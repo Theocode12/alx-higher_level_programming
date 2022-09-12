@@ -16,12 +16,13 @@ def main():
     db = MySQLdb.connect(host="localhost", port=3306, user=username,
                          password=password, db=database)
     cur = db.cursor()
-    query = """SELECT * FROM states WHERE name = '{}'
+    query = """SELECT * FROM states WHERE name = '{:s}'
             ORDER BY states.id""".format(name)
     cur.execute(query)
     result = cur.fetchall()
     for row in result:
-        print(row)
+        if row[1] == name:
+            print(row)
 
 
 if __name__ == '__main__':
