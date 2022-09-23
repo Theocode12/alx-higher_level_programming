@@ -11,4 +11,4 @@ def find_peak(list_int):
         if i > 0 and list_int[i] < list_int[i - 1]:
             return list_int[i - 1]
     if list_int:
-        return list_int[0]
+        return list_int[len(list_int) - 1]
