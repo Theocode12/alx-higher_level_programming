@@ -7,13 +7,15 @@ the response (decoded in utf-8)
 """
 
 from urllib import request
+from urllib import parse
 from sys import argv
 
 
 def main():
     """main function"""
 
-    data = bytes(argv[2], 'utf-8')
+    data = {'email': argv[2]}
+    data = parse.urlencode(data).encode()
     req = request.Request(argv[1], data)
     with request.urlopen(req) as resp:
         content = resp.read().decode('utf-8')
