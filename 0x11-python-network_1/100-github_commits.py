@@ -17,10 +17,9 @@ def main():
           + usr_name + '/' + repo_name + '/commits'
     commits = requests.get(url).json()[:10]
     for commit in commits:
-        if type(commit) is dict:
-            sha = commit.get('sha')
-            name = commit.get('commit').get('author').get('name')
-            print("{}: {}".format(sha, name))
+        sha = commit.get('sha')
+        name = commit.get('commit').get('author').get('name')
+        print("{}: {}".format(sha, name))
 
 
 if __name__ == "__main__":
