@@ -24,7 +24,7 @@ def main():
         if not py_obj:
             print("No result")
             return
-        print("[{}] {}".format(py_obj['id'], py_obj['name']))
+        print("[{}] {}".format(py_obj.get('id'), py_obj.get('name'))
     except Exception:
         print("Not a valid JSON")
 
