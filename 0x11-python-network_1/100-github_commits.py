@@ -15,11 +15,10 @@ def main():
     repo_name = argv[2]
     url = "https://api.github.com/repos/" \
           + usr_name + '/' + repo_name + '/commits'
-    commits = requests.get(url).json()[:10]
-    for commit in commits:
-        sha = commit.get('sha')
-        name = commit.get('commit').get('author').get('name')
-        print("{}: {}".format(sha, name))
+    commits = requests.get(url).json()
+    for commit in commits[:10]:
+        print(commit.get('sha'), end=':')
+        print(commit.get('commit').get('author').get('name'))
 
 
 if __name__ == "__main__":
