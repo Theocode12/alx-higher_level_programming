@@ -18,7 +18,8 @@ def main():
         q = argv[1]
     else:
         q = ""
-    r = requests.post(url, q)
+    data = {'q': q}
+    r = requests.post(url, data)
     try:
         py_obj = r.json()
         if not py_obj:
