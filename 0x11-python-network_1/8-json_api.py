@@ -1,4 +1,4 @@
-#!/usr.bin.python3
+#!/usr/bin/python3
 """
 A Python script that takes in a letter
 and sends a POST request to
