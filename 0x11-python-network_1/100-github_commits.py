@@ -13,8 +13,7 @@ def main():
 
     usr_name = argv[1]
     repo_name = argv[2]
-    url = "https://api.github.com/repos/" \
-          + usr_name + '/' + repo_name + '/commits'
+    url = f"https://api.github.com/repos/{usr_name}/{repo_name}/commits"
     commits = requests.get(url).json()
     for commit in commits[:10]:
         print(commit.get('sha'), end=':')
